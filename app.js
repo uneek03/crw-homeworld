@@ -1,17 +1,16 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const port = process.env.PORT || 10000;
 
-// Use 'public' folder to serve static files like CSS, images, JS
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files
+app.use(express.static(path.join(__dirname)));
 
-// Serve index.html when visiting the root
-app.get('/', (req, res) => {
+// Fallback route
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Let Render know which port to listen on
-const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`CRW Homeworld server running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
