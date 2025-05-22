@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRW: Homeworld</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ui">
+    <h1>CRW: Homeworld</h1>
+    <label for="viewMode">View as:</label>
+    <select id="viewMode">
+      <option value="admin">Admin (Full Map)</option>
+      <option value="faction">Faction (Fog of War)</option>
+    </select>
+    <div id="hoverInfo">Hover over a hex...</div>
+  </div>
+  <canvas id="hexMap"></canvas>
+  <script src="map.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
